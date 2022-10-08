@@ -1,0 +1,3 @@
+yc iam service-account get --name admin
+yc iam service-account list
+yc iam key create --service-account-id ajesr40nn1kumpc0aahk --folder-name default --output key.json
