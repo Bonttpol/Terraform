@@ -1,4 +1,5 @@
 terraform {
+
   required_providers {
     yandex = {
       source = "yandex-cloud/yandex"
@@ -21,11 +22,7 @@ terraform {
 }
 
 provider "yandex" {
-  #service_account_key_file = "key.json"
-  token = var.token
-  cloud_id = var.c-id
-  folder_id = var.f-id
-  zone = var.zone # зона, которая будет использована по умолчанию
+  zone = var.zone 
 }
 
 module "inst1" {
@@ -33,10 +30,12 @@ module "inst1" {
   name = "inst-1"
   image = "lamp"
   region = "ru-central1-b"
+  #version = "= 0.1"
 }
 
 module "inst2" {
   source = "../modules/"
   image = "lamp"
   name = "inst-2"
+  #version = "= 0.1"
 }
